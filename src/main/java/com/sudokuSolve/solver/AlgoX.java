@@ -166,6 +166,7 @@ public class AlgoX {
             for (int row = 0; row < matrix.length; row++) {
                 if (matrix[row][col]) {
                     count++;
+
                     lastRow = row;
                 }
             }

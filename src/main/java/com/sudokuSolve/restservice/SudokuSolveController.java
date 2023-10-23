@@ -18,7 +18,10 @@ public class SudokuSolveController {
             return new Solution(counter.incrementAndGet(), false, null, true);
         }
         int[][] initialMatrix = Util.StringToMatrix(sudoku);
+        Long timer = System.nanoTime();
         int[][] solvedMatrix = Sudoku.solve(initialMatrix);
+        timer = System.nanoTime() - timer;
+        System.out.println("Solved in " + timer/1000000 + "ms");
 
         return new Solution(counter.incrementAndGet(), solvedMatrix != null, solvedMatrix, false);
     }
